@@ -73,6 +73,13 @@ def show_status(player, enemy):
 #################################################################################################################
 def show_skills(player):
 
+    print("\nSkills:")
+
+    for i, skill in enumerate(player.skills):
+        print(f"{i+1} - {skill.name} (Cost: {skill.spent}, Cooldown: {skill.cooldown}s)")
+
+    print("0 - Basic Attack")
+#################################################################################################################
 
 #note Skills:
 
