@@ -138,14 +138,7 @@ def enemy_turn(enemy, player):
 while jotaro.life > 0 and dio.life > 0:
 
     show_status(jotaro, dio)
-
-    player_turn(jotaro, dio)
-
-    if dio.life <= 0:
-        print("\nDio was defeated!")
-        break
-
-    enemy_turn(dio, jotaro)
+    show_skills(jotaro)
 
     if jotaro.life <= 0:
         print("\nJotaro was defeated!")
