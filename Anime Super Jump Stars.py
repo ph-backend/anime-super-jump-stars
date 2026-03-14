@@ -78,7 +78,9 @@ def show_skills(player):
     for i, skill in enumerate(player.skills):
         print(f"{i+1} - {skill.name} (Cost: {skill.spent}, Cooldown: {skill.cooldown}s)")
 
-    print("0 - Basic Attack")
+        print(f"{i+1} - {skill.name} (Energy: {skill.spent}) [{status}]")
+
+    print("3 - Basic Attack")
 #################################################################################################################
 
 #note Skills:
