@@ -129,6 +129,15 @@ while jotaro.life > 0 and dio.life > 0:
 
     player_turn(jotaro, dio)
 
-print("Dio's Life:", dio.life)
-print("Jotaro's Stand Energy:", jotaro.stand_energy)
+    if dio.life <= 0:
+        print("\nDio was defeated!")
+        break
+
+    enemy_turn(dio, jotaro)
+
+    if jotaro.life <= 0:
+        print("\nJotaro was defeated!")
+        break
+
+
 
