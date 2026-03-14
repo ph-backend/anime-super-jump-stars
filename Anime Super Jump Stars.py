@@ -76,7 +76,12 @@ def show_skills(player):
     print("\nSkills:")
 
     for i, skill in enumerate(player.skills):
-        print(f"{i+1} - {skill.name} (Cost: {skill.spent}, Cooldown: {skill.cooldown}s)")
+
+        if skill.ready():
+            status = "READY"
+        else:
+            remaining = skill.cooldown - (time.time() - skill.last_use)
+            status = f"{remaining:.1f}s"
 
         print(f"{i+1} - {skill.name} (Energy: {skill.spent}) [{status}]")
 
