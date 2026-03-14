@@ -64,6 +64,14 @@ class StandUser:
         print(f"{target.name} received {damage_done} damage!")
 
 #################################################################################################################
+def show_status(player, enemy):
+
+    print("\n---------------------------")
+    print(f"{player.name} - Life: {player.life} | Stand Energy: {player.stand_energy}")
+    print(f"{enemy.name} - Life: {enemy.life}")
+    print("---------------------------")
+#################################################################################################################
+def show_skills(player):
 
 
 #note Skills:
