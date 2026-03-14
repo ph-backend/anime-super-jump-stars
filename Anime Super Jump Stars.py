@@ -83,8 +83,8 @@ def show_skills(player):
 
 #note Skills:
 
-ora_ora = Skills("ORA ORA", 15, 5,3)
-star_finger = Skills("Star Finger", 25, 7,7)
+ora_ora = Skills("ORA ORA", 25, 6,3)
+star_finger = Skills("Star Finger", 18, 6,7)
 
 #note characters
 
