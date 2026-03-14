@@ -147,5 +147,7 @@ while jotaro.life > 0 and dio.life > 0:
         idx = int(choice) - 1
         jotaro.skills[idx].use(jotaro, dio)
 
-
+    # Inimigo automático
+    if dio.life > 0:
+        dio.attack(jotaro)
 
