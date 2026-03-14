@@ -93,7 +93,41 @@ dio = StandUser("Dio", 190,160, 19, [])
 
 ##################################################################################################################
 
-jotaro.skills[0].use(jotaro, dio)
+def player_turn(player, enemy):
+
+    show_skills(player)
+
+    choice = input("\nChoose an action: ")
+
+    if choice == "0":
+        player.attack(enemy)
+
+    else:
+        index = int(choice) - 1
+
+        if 0 <= index < len(player.skills):
+            player.skills[index].use(player, enemy)
+        else:
+            print("Invalid option.")
+###################################################################################################################
+
+def enemy_turn(enemy, player):
+
+    print(f"\n{enemy.name}'s turn!")
+
+    enemy.attack(player)
+
+###################################################################################################################
+
+
+
+
+
+while jotaro.life > 0 and dio.life > 0:
+
+    show_status(jotaro, dio)
+
+    player_turn(jotaro, dio)
 
 print("Dio's Life:", dio.life)
 print("Jotaro's Stand Energy:", jotaro.stand_energy)
