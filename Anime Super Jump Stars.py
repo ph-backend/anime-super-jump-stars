@@ -1,0 +1,85 @@
+import time
+
+################################################################################################################
+
+class Skills:
+    def __init__(self, name, damage, spent, cooldown):
+        self.name = name
+        self.damage = damage
+        self.spent = spent
+        self.cooldown = cooldown
+        self.last_use = 0
+
+#note: the method will tell you if the skill can be used.
+
+    def ready(self):
+        now = time.time()
+        return now - self.last_use >= self.cooldown
+
+#note: the method that executes the attack.
+
+    def use(self, user, target):
+
+         if not self.ready():
+             remaining = self.cooldown - (time.time() - self.last_use)
+             print(f"{self.name} is on cooldown: {remaining:.1f}s")
+             return
+
+         if user.stand_energy < self.spent:
+             print(f"{user.name} does not have enough Stand Energy!")
+             return
+
+         #spend energy
+         user.stand_energy -= self.spent
+
+         #apply damage
+         damage_done = self.damage
+         target.life -= damage_done
+
+         #update cooldown
+         self.last_use = time.time()
+
+         print(f"{user.name} used {self.name}!")
+         print(f"{target.name} received {damage_done} damage!")
+
+
+
+#################################################################################################################
+class StandUser:
+
+    def __init__(self, name, life,stand_energy, damage, skills):
+        self.name = name
+        self.life = life
+        self.stand_energy = stand_energy
+        self.damage = damage
+        self.skills = skills
+
+    def attack(self, target):
+
+
+        damage_done = self.damage
+        target.life -= damage_done
+
+        print(f"{self.name} attacked {target.name}")
+        print(f"{target.name} received {damage_done} damage!")
+
+#################################################################################################################
+
+
+#note Skills:
+
+ora_ora = Skills("ORA ORA", 15, 5,3)
+star_finger = Skills("Star Finger", 25, 7,7)
+
+#note characters
+
+jotaro = StandUser("Jotaro", 180,100, 17,[ora_ora, star_finger])
+dio = StandUser("Dio", 190,160, 19, [])
+
+##################################################################################################################
+
+jotaro.skills[0].use(jotaro, dio)
+
+print("Dio's Life:", dio.life)
+print("Jotaro's Stand Energy:", jotaro.stand_energy)
+
