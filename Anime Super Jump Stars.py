@@ -156,6 +156,8 @@ while running:
 
         if event.type == pygame.KEYDOWN:
 
+            if event.key == pygame.K_1:
+                jotaro.skills[0].use(jotaro,dio)
 
 
 
