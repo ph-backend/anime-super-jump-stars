@@ -134,15 +134,9 @@ dio = StandUser("Dio", 190,160, 19, [])
 ##################################################################################################################
 clock = pygame.time.Clock()
 
-    show_skills(player)
 
-    choice = input("\nChoose an action: ")
 
-    if choice == "0":
-        player.attack(enemy)
 
-    else:
-        index = int(choice) - 1
 
 running = True
 
