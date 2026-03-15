@@ -148,7 +148,8 @@ running = True
 
 while running:
 
-    print(f"\n{enemy.name}'s turn!")
+    clock.tick(60)
+    for event in pygame.event.get():
 
     enemy.attack(player)
 
