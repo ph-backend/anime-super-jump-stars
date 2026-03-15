@@ -146,7 +146,7 @@ clock = pygame.time.Clock()
 
 running = True
 
-def enemy_turn(enemy, player):
+while running:
 
     print(f"\n{enemy.name}'s turn!")
 
