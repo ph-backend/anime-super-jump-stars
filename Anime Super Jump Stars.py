@@ -144,11 +144,7 @@ clock = pygame.time.Clock()
     else:
         index = int(choice) - 1
 
-        if 0 <= index < len(player.skills):
-            player.skills[index].use(player, enemy)
-        else:
-            print("Invalid option.")
-###################################################################################################################
+running = True
 
 def enemy_turn(enemy, player):
 
