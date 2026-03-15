@@ -132,8 +132,7 @@ jotaro = StandUser("Jotaro", 180,100, 17,[ora_ora, star_finger])
 dio = StandUser("Dio", 190,160, 19, [])
 
 ##################################################################################################################
-
-def player_turn(player, enemy):
+clock = pygame.time.Clock()
 
     show_skills(player)
 
