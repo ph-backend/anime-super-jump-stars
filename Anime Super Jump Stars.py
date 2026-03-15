@@ -151,7 +151,8 @@ while running:
     clock.tick(60)
     for event in pygame.event.get():
 
-    enemy.attack(player)
+        if event.type == pygame.QUIT:
+            running = False
 
 ###################################################################################################################
 
