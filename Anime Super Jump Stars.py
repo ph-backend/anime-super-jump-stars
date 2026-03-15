@@ -1,7 +1,10 @@
 import time
 
 
-
+pygame.init()
+screen = pygame.display.set_mode((800,600))
+pygame.display.set_caption("Anime Super Jump Stars")
+font = pygame.font.SysFont("Arial", 24)
 
 
 
