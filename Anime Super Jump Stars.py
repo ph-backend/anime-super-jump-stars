@@ -18,6 +18,7 @@ class Skills:
         self.cooldown = cooldown
         self.last_use = 0
 
+
 #note: the method will tell you if the skill can be used.
 
     def ready(self):
