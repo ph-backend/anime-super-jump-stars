@@ -167,7 +167,7 @@ while running:
 
     screen.fill((0,0,0))
 
-    # Inimigo automático
-    if dio.life > 0:
-        dio.attack(jotaro)
+    draw_skills(jotaro)
+
+    pygame.display.update()
 
