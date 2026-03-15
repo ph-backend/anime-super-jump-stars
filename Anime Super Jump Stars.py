@@ -27,6 +27,7 @@ class Skills:
 
 #note: the method that executes the attack.
 
+
     def use(self, user, target):
 
          if not self.ready():
