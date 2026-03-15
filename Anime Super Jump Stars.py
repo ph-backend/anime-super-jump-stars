@@ -47,6 +47,29 @@ class Skills:
          print(f"{user.name} used {self.name}!")
          print(f"{target.name} received {damage_done} damage!")
 
+#######################################################################################################################
+
+
+
+def draw_skills(player):
+
+    y = 500
+
+    for skill in player.skills:
+
+        if skill.ready():
+            text = f"{skill.name} - READY"
+        else:
+            remaining = skill.cooldown - (time.time() - skill.last_use)
+            text = f"{skill.name} - {remaining:.1f}s"
+
+        skill_text = font.render(text, True, (255, 255, 255))
+        screen.blit(skill_text, (50, y))
+
+        y += 30
+
+
+
 
 
 #################################################################################################################
