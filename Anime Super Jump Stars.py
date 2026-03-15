@@ -162,19 +162,10 @@ while running:
             if event.key == pygame.K_2:
                 jotaro.skills[1].use(jotaro,dio)
 
+            if event.key == pygame.K_SPACE:
+                jotaro.attack(dio)
 
-
-while jotaro.life > 0 and dio.life > 0:
-
-    show_status(jotaro, dio)
-    show_skills(jotaro)
-
-    choice = input("Choose skill (0 for basic): ")
-    if choice == "3":
-        jotaro.attack(dio)
-    else:
-        idx = int(choice) - 1
-        jotaro.skills[idx].use(jotaro, dio)
+    screen.fill((0,0,0))
 
     # Inimigo automático
     if dio.life > 0:
