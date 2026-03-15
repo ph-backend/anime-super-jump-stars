@@ -159,6 +159,8 @@ while running:
             if event.key == pygame.K_1:
                 jotaro.skills[0].use(jotaro,dio)
 
+            if event.key == pygame.K_2:
+                jotaro.skills[1].use(jotaro,dio)
 
 
 
