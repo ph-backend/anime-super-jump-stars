@@ -161,6 +161,16 @@ while running:
 
     screen.fill((0,0,0))
 
+    #note Show Characters Name
+    jotaro_text = font.render("Jotaro", True, (255, 255, 255))
+    dio_text = font.render("Dio", True, (255, 255, 255))
+
+    screen.blit(jotaro_text, (50, 20))
+    screen.blit(dio_text, (550, 20))
+
+    #note Lifebar
+    draw_health_bar(50, 50, jotaro.life, jotaro.max_life)
+    draw_health_bar(550, 50, dio.life, dio.max_life)
     draw_skills(jotaro)
 
     pygame.display.update()
