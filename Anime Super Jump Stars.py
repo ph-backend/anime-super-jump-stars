@@ -173,5 +173,32 @@ while running:
     draw_health_bar(550, 50, dio.life, dio.max_life)
     draw_skills(jotaro)
 
+
+    for text in floating_texts[:]:
+        text.update()
+        text.draw()
+
+        if text.timer <= 0:
+            floating_texts.remove(text)
+
+
+    if dio.life > 0 and jotaro.life > 0:
+
+        now = time.time()
+
+        if now - last_enemy_attack >= enemy_cooldown:
+            dio.attack(jotaro)
+            last_enemy_attack = now
+
+
+
+    if jotaro.life <= 0:
+        print("Dio venceu!")
+        running = False
+
+    if dio.life <= 0:
+        print("Jotaro venceu!")
+        running = False
+
     pygame.display.update()
 
