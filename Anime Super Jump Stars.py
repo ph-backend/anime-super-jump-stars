@@ -120,6 +120,24 @@ def show_skills(player):
 
     print("3 - Basic Attack")
 #################################################################################################################
+class FloatingText:
+
+    def __init__(self, text, x, y,color):
+        self.text = text
+        self.x = x
+        self.y = y
+        self.color = color
+        self.timer = 60
+
+    def update(self):
+        self.y -= 1
+        self.timer -= 1
+
+    def draw(self):
+        dmg_text = font.render(self.text, True, self.color)
+        screen.blit(dmg_text, (self.x, self.y))
+
+#################################################################################################################
 
 #note Skills:
 
